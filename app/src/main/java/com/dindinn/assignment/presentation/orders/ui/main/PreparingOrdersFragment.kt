@@ -4,35 +4,46 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingComponent
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.dindinn.assignment.R
+import com.dindinn.assignment.common.binding.FragmentDataBindingComponent
 import com.dindinn.assignment.databinding.FragmentPreparingOrdersBinding
+import com.dindinn.assignment.di.Injectable
+import javax.inject.Inject
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class PreparingOrdersFragment : Fragment() {
+class PreparingOrdersFragment : Fragment(), Injectable {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private var dataBindingComponent: DataBindingComponent = FragmentDataBindingComponent(this)
 
     private lateinit var pageViewModel: PageViewModel
-    private var _binding: FragmentPreparingOrdersBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentPreparingOrdersBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        pageViewModel = ViewModelProvider(this).get(PageViewModel::class.java).apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
-        }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_preparing_orders,
+            container,
+            false,
+            dataBindingComponent
+        )
+        return binding.root
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentPreparingOrdersBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        pageViewModel= ViewModelProvider(this, viewModelFactory).get(PageViewModel::class.java).apply {
+            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
+        }
     }
 
     companion object {
@@ -54,10 +65,5 @@ class PreparingOrdersFragment : Fragment() {
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

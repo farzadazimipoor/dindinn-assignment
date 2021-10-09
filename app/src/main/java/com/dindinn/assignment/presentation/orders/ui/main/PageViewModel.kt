@@ -1,18 +1,27 @@
 package com.dindinn.assignment.presentation.orders.ui.main
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import android.content.Context
+import androidx.lifecycle.*
+import com.dindinn.assignment.common.Resource
+import com.dindinn.assignment.domain.model.OrderItem
+import com.dindinn.assignment.domain.use_case.order.GetOrdersUseCase
+import javax.inject.Inject
 
-class PageViewModel : ViewModel() {
+class PageViewModel @Inject constructor(
+    private val getOrdersUseCase: GetOrdersUseCase
+) : ViewModel() {
 
     private val _index = MutableLiveData<Int>()
+
     val text: LiveData<String> = Transformations.map(_index) {
         "Hello world from section: $it"
     }
 
     fun setIndex(index: Int) {
         _index.value = index
+    }
+
+    fun fetchOrdersList(context: Context): LiveData<Resource<List<OrderItem>>> {
+        return getOrdersUseCase.invoke(context).asLiveData()
     }
 }
