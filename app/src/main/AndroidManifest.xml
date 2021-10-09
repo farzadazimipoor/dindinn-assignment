@@ -11,14 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DinDinnAssignment">
         <activity
-            android:name=".presentation.main.MainActivity"
-            android:exported="true">
+            android:name=".presentation.orders.OrdersActivity"
+            android:exported="true"
+            android:label="@string/title_activity_orders"
+            android:theme="@style/Theme.DinDinnAssignment.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.main.MainActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DinDinn Assignment</string>
     <string name="unknown_error">Unknown error occurred</string>
+    <string name="title_activity_orders">OrdersActivity</string>
+    <string name="incoming_tab_text">Incoming</string>
+    <string name="preparing_tab_text">Preparing</string>
+    <string name="collection_tab_text">Collection</string>
 </resources>
