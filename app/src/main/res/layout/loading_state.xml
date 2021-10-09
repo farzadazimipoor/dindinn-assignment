@@ -6,18 +6,18 @@
 
     <data>
 
-        <import type="com.dindinn.assignment.enums.Status" />
+        <import type="com.dindinn.assignment.domain.model.enums.Status" />
 
-        <import type="com.dindinn.assignment.models.generics.Resource" />
+        <import type="com.dindinn.assignment.common.Resource" />
 
         <variable
             name="resource"
-            type="com.dindinn.assignment.models.generics.Resource" />
+            type="com.dindinn.assignment.common.Resource" />
 
 
         <variable
             name="callback"
-            type="com.dindinn.assignment.ui.common.RetryCallback" />
+            type="com.dindinn.assignment.common.RetryCallback" />
     </data>
 
     <LinearLayout
@@ -26,8 +26,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:visibility="gone"
-        app:visibleGone="@{resource.data == null}">
+        app:visibleGone="@{resource.data == null}"
+        tools:visibility="gone">
 
         <TextView
             android:id="@+id/error_msg"
@@ -52,16 +52,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/retry"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:onClick="@{() -> callback.retry()}"
             android:text="Retry"
             android:textAllCaps="false"
             android:textSize="14sp"
-            app:backgroundTint="@color/purple_700"
             android:textStyle="bold"
+            app:backgroundTint="@color/purple_700"
             app:visibleGone="@{resource.status == Status.ERROR}" />
 
     </LinearLayout>

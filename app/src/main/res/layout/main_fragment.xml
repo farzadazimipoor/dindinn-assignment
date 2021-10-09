@@ -5,17 +5,17 @@
 
     <data>
 
-        <import type="com.dindinn.assignment.enums.Status" />
+        <import type="com.dindinn.assignment.domain.model.enums.Status" />
 
-        <import type="com.dindinn.assignment.models.generics.Resource" />
+        <import type="com.dindinn.assignment.common.Resource" />
 
         <variable
             name="resource"
-            type="com.dindinn.assignment.models.generics.Resource" />
+            type="com.dindinn.assignment.common.Resource" />
 
         <variable
             name="callback"
-            type="com.dindinn.assignment.ui.common.RetryCallback" />
+            type="com.dindinn.assignment.common.RetryCallback" />
 
     </data>
 
@@ -26,12 +26,12 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello DinDinn"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Hello DinDinn"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <include
             layout="@layout/loading_state"

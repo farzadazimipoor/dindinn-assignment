@@ -1,8 +1,8 @@
 package com.dindinn.assignment.di
 
+import com.dindinn.assignment.presentation.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.dindinn.assignment.ui.main.MainActivity
 
 @Suppress("unused")
 @Module

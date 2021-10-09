@@ -1,10 +1,10 @@
 package com.dindinn.assignment.di
 
 import android.app.Application
+import com.dindinn.assignment.MyApplication
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import com.dindinn.assignment.MyApp
 import javax.inject.Singleton
 
 @Singleton
@@ -24,5 +24,5 @@ interface AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(app: MyApp)
+    fun inject(app: MyApplication)
 }

@@ -6,17 +6,17 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.dindinn.assignment.MyApplication
 import dagger.android.AndroidInjection
 import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import com.dindinn.assignment.MyApp
 
 /**
  * Helper class to automatically inject fragments if they implement [Injectable].
  */
 
 object AppInjector {
-    fun init(app: MyApp) {
+    fun init(app: MyApplication) {
         DaggerAppComponent.builder().application(app).build().inject(app)
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
