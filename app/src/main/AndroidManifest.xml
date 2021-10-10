@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dindinn.assignment">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -14,11 +16,13 @@
             android:name=".presentation.ingredients.IngredientsActivity"
             android:exported="true"
             android:label="@string/title_activity_ingredients"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.DinDinnAssignment.NoActionBar" />
         <activity
             android:name=".presentation.orders.OrdersActivity"
             android:exported="true"
             android:label="@string/title_activity_orders"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.DinDinnAssignment.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,6 +3,7 @@ package com.dindinn.assignment.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dindinn.assignment.common.helpers.MyViewModelFactory
+import com.dindinn.assignment.presentation.ingredients.ui.main.IngredientsViewModel
 import com.dindinn.assignment.presentation.main.MainViewModel
 import com.dindinn.assignment.presentation.orders.ui.main.PageViewModel
 import dagger.Binds
@@ -25,4 +26,9 @@ abstract class ViewModelBuildersModule {
     @IntoMap
     @ViewModelKey(PageViewModel::class)
     abstract fun bindPagerViewModel(pageViewModel: PageViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(IngredientsViewModel::class)
+    abstract fun bindIngredientsViewModel(pageViewModel: IngredientsViewModel): ViewModel
 }

@@ -1,15 +1,20 @@
 package com.dindinn.assignment.presentation.ingredients
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.dindinn.assignment.databinding.ActivityIngredientsBinding
+import com.dindinn.assignment.presentation.BaseActivity
 import com.dindinn.assignment.presentation.ingredients.ui.main.SectionsPagerAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class IngredientsActivity : AppCompatActivity() {
+class IngredientsActivity : BaseActivity(), HasAndroidInjector {
+
+    @Inject
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     private lateinit var binding: ActivityIngredientsBinding
 
@@ -24,11 +29,11 @@ class IngredientsActivity : AppCompatActivity() {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
-        val fab: FloatingActionButton = binding.fab
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.imgClose?.setOnClickListener {
+            finish()
         }
     }
+
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }

@@ -10,7 +10,7 @@
         android:id="@+id/order_item_layout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="4dp"
         android:background="@color/purple_200"
         android:elevation="2dp">
 
@@ -18,7 +18,7 @@
             android:id="@+id/view5"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:background="@color/purple_200"
+            android:background="@color/custom_background"
             app:layout_constraintBottom_toTopOf="@+id/view6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -29,7 +29,7 @@
             android:id="@+id/view6"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/green"
+            android:background="@color/white"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:layout_marginEnd="16dp"
             android:text="Auto Reject"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/button2"
             app:layout_constraintEnd_toStartOf="@+id/button2"
@@ -54,10 +54,11 @@
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:text="Okay"
+            android:textAllCaps="false"
             app:cornerRadius="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view5" />
@@ -101,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:text="Auto reject in"
+            android:text="Auto reject"
             app:layout_constraintBaseline_toBaselineOf="@+id/txt_order_no"
             app:layout_constraintEnd_toStartOf="@+id/txt_counter" />
 
@@ -113,7 +114,7 @@
             android:layout_marginTop="8dp"
             android:text="#556"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/txt_counter_title"
             app:layout_constraintStart_toStartOf="@+id/view5"

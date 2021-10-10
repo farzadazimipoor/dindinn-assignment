@@ -11,13 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.dindinn.assignment.R
 import com.dindinn.assignment.common.binding.FragmentDataBindingComponent
 import com.dindinn.assignment.common.helpers.AppExecutors
 import com.dindinn.assignment.databinding.FragmentIncomingOrdersBinding
 import com.dindinn.assignment.di.Injectable
-import com.dindinn.assignment.presentation.common.GridSpacingItemDecoration
 import javax.inject.Inject
 
 
@@ -63,10 +61,7 @@ class IncomingOrdersFragment : Fragment(), Injectable {
         })
 
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            val mLayoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 3)
-            val spacingInPixels = resources.getDimensionPixelSize(R.dimen.appbar_padding)
-            binding.ordersRecyclerView.addItemDecoration(GridSpacingItemDecoration(spacingInPixels, 8, true, 4))
-            binding.ordersRecyclerView.layoutManager = mLayoutManager
+            binding.ordersRecyclerView.layoutManager = GridLayoutManager(context, 3)
         } else {
             binding.ordersRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         }

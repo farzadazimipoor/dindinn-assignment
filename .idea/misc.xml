@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/card_not_available_body_background.xml" value="0.26256410256410256" />
+        <entry key="app/src/main/res/drawable-v24/card_not_available_header_background.xml" value="0.26256410256410256" />
+        <entry key="app/src/main/res/drawable/card_available_body_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/drawable/card_available_header_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/drawable/card_body_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/drawable/radius_background.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/drawable/radius_ingredient_card.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout-land/activity_ingredients.xml" value="0.13125" />
         <entry key="app/src/main/res/layout-land/activity_orders.xml" value="0.165" />
         <entry key="app/src/main/res/layout-land/fragment_incoming_orders.xml" value="0.13229166666666667" />
+        <entry key="app/src/main/res/layout/activity_ingredients.xml" value="0.24259259259259258" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_orders.xml" value="0.16530797101449277" />
         <entry key="app/src/main/res/layout/blank_fragment.xml" value="0.1933876811594203" />
@@ -14,6 +24,7 @@
         <entry key="app/src/main/res/layout/fragment_ingredients.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.20516304347826086" />
         <entry key="app/src/main/res/layout/fragment_preparing_orders.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/ingredient_item_view.xml" value="0.24259259259259258" />
         <entry key="app/src/main/res/layout/loading_state.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1933876811594203" />
         <entry key="app/src/main/res/layout/order_item_view.xml" value="0.25" />

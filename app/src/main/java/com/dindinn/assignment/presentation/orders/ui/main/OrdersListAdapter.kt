@@ -65,7 +65,7 @@ class OrdersListAdapter(
                 if (it == 0L) {
                     Toast.makeText(binding.root.context, "${item.no} Completed", Toast.LENGTH_LONG).show()
                 }
-                binding.txtCounter.text = it.toString()
+                binding.txtCounter.text = "${it}s"
                 binding.progressBar.progress = it.toInt()
             }
         }.launchIn(GlobalScope)

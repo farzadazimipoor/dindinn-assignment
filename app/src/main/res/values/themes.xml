@@ -20,7 +20,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.DinDinnAssignment.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.DinDinnAssignment.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="backgroundColor">@color/white</item>
+        <item name="color">@color/white</item>
+    </style>
 
     <style name="Theme.DinDinnAssignment.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
         <item name="backgroundColor">@color/white</item>
