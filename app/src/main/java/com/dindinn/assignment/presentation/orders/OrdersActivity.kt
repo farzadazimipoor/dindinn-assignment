@@ -3,6 +3,7 @@ package com.dindinn.assignment.presentation.orders
 import android.content.Intent
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
+import com.dindinn.assignment.R
 import com.dindinn.assignment.databinding.ActivityOrdersBinding
 import com.dindinn.assignment.presentation.BaseActivity
 import com.dindinn.assignment.presentation.ingredients.IngredientsActivity

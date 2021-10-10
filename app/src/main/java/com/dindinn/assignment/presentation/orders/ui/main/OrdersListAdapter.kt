@@ -1,9 +1,13 @@
 package com.dindinn.assignment.presentation.orders.ui.main
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingComponent
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
@@ -63,6 +67,10 @@ class OrdersListAdapter(
             }
             (binding.root.context as OrdersActivity).runOnUiThread {
                 if (it == 0L) {
+                    binding.button2.text = "Okay"
+                    binding.button2.setTextColor(ContextCompat.getColor(binding.root.context, R.color.black))
+                    binding.button2.backgroundTintList = ColorStateList.valueOf(Color.WHITE)
+                    binding.txtRejectTitle.visibility = View.VISIBLE
                     Toast.makeText(binding.root.context, "${item.no} Completed", Toast.LENGTH_LONG).show()
                 }
                 binding.txtCounter.text = "${it}s"
