@@ -9,5 +9,6 @@ data class OrderItem(
     val expired_at: String,
     val id: Int,
     val quantity: Int,
-    val title: String
+    val title: String,
+    val no: String
 )

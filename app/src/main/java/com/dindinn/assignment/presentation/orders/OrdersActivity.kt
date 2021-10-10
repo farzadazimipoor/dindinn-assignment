@@ -1,9 +1,11 @@
 package com.dindinn.assignment.presentation.orders
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.dindinn.assignment.databinding.ActivityOrdersBinding
 import com.dindinn.assignment.presentation.BaseActivity
+import com.dindinn.assignment.presentation.ingredients.IngredientsActivity
 import com.dindinn.assignment.presentation.orders.ui.main.SectionsPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import dagger.android.AndroidInjector
@@ -29,6 +31,11 @@ class OrdersActivity : BaseActivity(), HasAndroidInjector {
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabs
         tabs.setupWithViewPager(viewPager)
+
+        binding.ingredientsBtn?.setOnClickListener {
+            val intent = Intent(this, IngredientsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector

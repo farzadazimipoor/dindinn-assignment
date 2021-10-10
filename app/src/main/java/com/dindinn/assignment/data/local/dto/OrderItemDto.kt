@@ -9,7 +9,8 @@ data class OrderItemDto(
     val expired_at: String,
     val id: Int,
     val quantity: Int,
-    val title: String
+    val title: String,
+    val no: String
 )
 
 fun OrderItemDto.toOrderItem(): OrderItem {
@@ -20,6 +21,7 @@ fun OrderItemDto.toOrderItem(): OrderItem {
         expired_at = expired_at,
         id = id,
         quantity = quantity,
-        title = title
+        title = title,
+        no = no
     )
 }

@@ -5,4 +5,7 @@
     <string name="incoming_tab_text">Incoming</string>
     <string name="preparing_tab_text">Preparing</string>
     <string name="collection_tab_text">Collection</string>
+    <string name="title_activity_ingredients">IngredientsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
